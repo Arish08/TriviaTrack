@@ -1,21 +1,13 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Login from './Login';
-import Signup from './signup';
-import './App.css';
+// src/App.tsx
+
+import React from "react";
+import LoginPage from "./Login";
+import SignUpPage from "./signup";
+// import SignUpPage from "./SignUpPage"; // Uncomment this to use SignUpPage
 
 const App: React.FC = () => {
-    return (
-        <Router>
-            <div className="app">
-                <Routes>
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/signup" element={<Signup />} />
-                    <Route path="/" element={<Login />} />
-                </Routes>
-            </div>
-        </Router>
-    );
+//   return <LoginPage />;
+  return <SignUpPage />;
 };
 
 export default App;
