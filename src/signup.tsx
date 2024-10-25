@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 
-const Login: React.FC = () => {
+const Signup: React.FC = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
 
-    const handleLogin = (e: React.FormEvent) => {
+    const handleSignup = (e: React.FormEvent) => {
         e.preventDefault();
-        // Handle login logic here
-        console.log('Login:', { email, password });
+        // Handle signup logic here
+        console.log('Sign up:', { email, password });
     };
 
     return (
         <div className="auth-container">
-            <h2>Login</h2>
-            <form onSubmit={handleLogin}>
+            <h2>Sign Up</h2>
+            <form onSubmit={handleSignup}>
                 <input
                     type="email"
                     placeholder="Email"
@@ -28,11 +29,18 @@ const Login: React.FC = () => {
                     onChange={(e) => setPassword(e.target.value)}
                     required
                 />
-                <button type="submit">Login</button>
+                <input
+                    type="password"
+                    placeholder="Confirm Password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    required
+                />
+                <button type="submit">Sign Up</button>
             </form>
-            <p>Don't have an account? <a href="/signup">Sign up</a></p>
+            <p>Already have an account? <a href="/login">Login</a></p>
         </div>
     );
 };
 
-export default Login;
+export default Signup;
